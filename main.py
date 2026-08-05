@@ -1,15 +1,9 @@
-from app.navegador import abrir_pagina, fechar
+from fontes.pelando import buscar
 
 
 def main():
 
-    playwright, navegador, pagina = abrir_pagina(
-        "https://www.google.com"
-    )
-
-    print(pagina.title())
-
-    fechar(playwright, navegador)
+    buscar()
 
 
 if __name__ == "__main__":
