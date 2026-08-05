@@ -1,24 +1,12 @@
 from dataclasses import dataclass
 
 @dataclass
-class Promocao:
+class Cupom:
 
-    loja: str
+    codigo: str
 
-    titulo: str
+    descricao: str
 
-    preco: float
+    validade: str
 
-    preco_antigo: float
-
-    desconto: int
-
-    cupom: str
-
-    cashback: str
-
-    categoria: str
-
-    link: str
-
-    imagem: str
+    origem: str
