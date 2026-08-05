@@ -1,4 +1,4 @@
-LINK_AFILIADO = ""
+LINK_AFILIADO = "https://meli.la/25TKoJY"
 
 NOME_CANAL = "PromoBot Brasil"
 
