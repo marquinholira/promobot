@@ -1,23 +1,10 @@
+from fontes.mercadolivre import buscar as buscar_ml
+
+
 def buscar_promocoes():
 
-    return [
+    promocoes = []
 
-        {
-            "titulo": "Cupom Mercado Livre R$50 OFF",
+    promocoes.extend(buscar_ml())
 
-            "cupom": "MELI50",
-
-            "categoria": "Mercado Livre"
-
-        },
-
-        {
-            "titulo": "Notebook Lenovo",
-
-            "cupom": "",
-
-            "categoria": "Mercado Livre"
-
-        }
-
-    ]
+    return promocoes
