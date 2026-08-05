@@ -1,0 +1,5 @@
+LINK_AFILIADO = ""
+
+NOME_CANAL = "PromoBot Brasil"
+
+MAXIMO_PROMOCOES = 10
