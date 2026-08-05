@@ -1,17 +1,26 @@
+from config import LINK_AFILIADO
+
+
 def gerar_mensagem(lista):
 
-    texto = "🔥 CUPONS DO MERCADO LIVRE\n\n"
+    texto = "🔥 *PROMOBOT BRASIL*\n\n"
 
     for item in lista:
 
-        texto += f"🟢 {item['titulo']}\n"
+        texto += f"📢 {item['titulo']}\n"
 
         if item["cupom"]:
 
-            texto += f"Código: {item['cupom']}\n"
+            texto += f"🎁 Código: {item['cupom']}\n"
 
         texto += "\n"
 
-    texto += "🛒 Em breve seu link de afiliado ficará aqui."
+    texto += "━━━━━━━━━━━━━━\n\n"
+
+    texto += "🛒 Compre pelo meu link:\n"
+
+    texto += f"{LINK_AFILIADO}\n\n"
+
+    texto += "❤️ Obrigado por apoiar o canal."
 
     return texto
