@@ -20,29 +20,4 @@ def gerar(cupons):
 
     texto += "\n\n❤️ Obrigado por apoiar o canal."
 
-    return textofrom config import LINK_AFILIADO
-
-
-def gerar_mensagem(lista):
-
-    texto = "🔥 *PROMOBOT BRASIL*\n\n"
-
-    for item in lista:
-
-        texto += f"📢 {item['titulo']}\n"
-
-        if item["cupom"]:
-
-            texto += f"🎁 Código: {item['cupom']}\n"
-
-        texto += "\n"
-
-    texto += "━━━━━━━━━━━━━━\n\n"
-
-    texto += "🛒 Compre pelo meu link:\n"
-
-    texto += f"{LINK_AFILIADO}\n\n"
-
-    texto += "❤️ Obrigado por apoiar o canal."
-
     return texto
