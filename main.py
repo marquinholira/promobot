@@ -1,21 +1,22 @@
-from fontes import buscar_promocoes
-from filtro import filtrar
-from mensagem import gerar_mensagem
-from salvar import salvar_texto
+from playwright.sync_api import sync_playwright
 
 def main():
 
-    print("PROMOBOT")
+    with sync_playwright() as p:
 
-    promocoes = buscar_promocoes()
+        navegador = p.chromium.launch(
+            headless=True
+        )
 
-    promocoes = filtrar(promocoes)
+        pagina = navegador.new_page()
 
-    mensagem = gerar_mensagem(promocoes)
+        pagina.goto("https://www.google.com")
 
-    salvar_texto(mensagem)
+        print("Título da página:")
 
-    print(mensagem)
+        print(pagina.title())
+
+        navegador.close()
 
 if __name__ == "__main__":
     main()
