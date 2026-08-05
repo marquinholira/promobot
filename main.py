@@ -1,17 +1,27 @@
-from fontes.exemplo import buscar
+from fontes.cupons import buscar
+from historico import carregar, salvar
+from mensagem import gerar
 
-promocoes = buscar()
+cupons = buscar()
 
-for p in promocoes:
+historico = carregar()
 
-    print("---------------------------")
+novos = []
 
-    print("Loja:", p.loja)
+for cupom in cupons:
 
-    print("Produto:", p.titulo)
+    if cupom.codigo not in historico:
 
-    print("Preço:", p.preco)
+        novos.append(cupom)
 
-    print("Desconto:", p.desconto, "%")
+        historico.append(cupom.codigo)
 
-    print("Cupom:", p.cupom)
+salvar(historico)
+
+texto = gerar(novos)
+
+print(texto)
+
+with open("mensagem.txt", "w", encoding="utf-8") as arquivo:
+
+    arquivo.write(texto)
