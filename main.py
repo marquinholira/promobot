@@ -1,22 +1,16 @@
-from playwright.sync_api import sync_playwright
+from app.navegador import abrir_pagina, fechar
+
 
 def main():
 
-    with sync_playwright() as p:
+    playwright, navegador, pagina = abrir_pagina(
+        "https://www.google.com"
+    )
 
-        navegador = p.chromium.launch(
-            headless=True
-        )
+    print(pagina.title())
 
-        pagina = navegador.new_page()
+    fechar(playwright, navegador)
 
-        pagina.goto("https://www.google.com")
-
-        print("Título da página:")
-
-        print(pagina.title())
-
-        navegador.close()
 
 if __name__ == "__main__":
     main()
