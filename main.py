@@ -1,10 +1,17 @@
-from fontes.pelando import buscar
+from fontes.exemplo import buscar
 
+promocoes = buscar()
 
-def main():
+for p in promocoes:
 
-    buscar()
+    print("---------------------------")
 
+    print("Loja:", p.loja)
 
-if __name__ == "__main__":
-    main()
+    print("Produto:", p.titulo)
+
+    print("Preço:", p.preco)
+
+    print("Desconto:", p.desconto, "%")
+
+    print("Cupom:", p.cupom)
